@@ -36,17 +36,17 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <HintPath>packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.21.9.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
-    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
     </Reference>
-    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
     </Reference>
-    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
-      <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -66,8 +66,8 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>packages\MySql.Data.8.0.31\lib\net452\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.0.33.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.33\lib\net462\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -76,16 +76,22 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
     <Reference Include="System.Management" />
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
@@ -97,11 +103,16 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>packages\MySql.Data.8.0.31\lib\net452\ZstdNet.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="axios_dental_devDataSet.cs">
+      <DependentUpon>axios_dental_devDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="axios_dental_devDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>axios_dental_devDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="br.com.projeto.conexao\ConnectionFactory.cs" />
     <Compile Include="br.com.projeto.dao\AgendamentoDAO.cs" />
     <Compile Include="br.com.projeto.dao\AtendimentoDAO.cs" />
@@ -136,6 +147,12 @@
     <Compile Include="br.com.projeto.view\FrmLocalTratamento.Designer.cs">
       <DependentUpon>FrmLocalTratamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="br.com.projeto.view\FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.projeto.view\FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="br.com.projeto.view\FrmPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,11 +179,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Relatorios\FrmRelatorioAtendimento.cs">
+    <Compile Include="Relatorios\FrmRelatorios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Relatorios\FrmRelatorioAtendimento.Designer.cs">
-      <DependentUpon>FrmRelatorioAtendimento.cs</DependentUpon>
+    <Compile Include="Relatorios\FrmRelatorios.Designer.cs">
+      <DependentUpon>FrmRelatorios.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="br.com.projeto.view\FrmAgendamento.resx">
@@ -177,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.projeto.view\FrmLocalTratamento.resx">
       <DependentUpon>FrmLocalTratamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="br.com.projeto.view\FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.projeto.view\FrmPacientes.resx">
       <DependentUpon>FrmPacientes.cs</DependentUpon>
@@ -200,10 +220,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Relatorios\FrmRelatorioAtendimento.resx">
-      <DependentUpon>FrmRelatorioAtendimento.cs</DependentUpon>
+    <EmbeddedResource Include="Relatorios\FrmRelatorios.resx">
+      <DependentUpon>FrmRelatorios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorios\RelAtendimento.rdlc" />
+    <EmbeddedResource Include="Relatorios\RptRelatorioAtendimento.rdlc" />
+    <None Include="axios_dental_devDataSet.xsc">
+      <DependentUpon>axios_dental_devDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="axios_dental_devDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>axios_dental_devDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="axios_dental_devDataSet.xss">
+      <DependentUpon>axios_dental_devDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -228,6 +259,96 @@
     <None Include="Resources\setore.PNG" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagens\acess_not.jpeg" />
+    <Content Include="Imagens\add20x20.jpg" />
+    <Content Include="Imagens\add216x16.png" />
+    <Content Include="Imagens\add32x32.png" />
+    <Content Include="Imagens\add_16.png" />
+    <Content Include="Imagens\agend.png" />
+    <Content Include="Imagens\agendamento.png" />
+    <Content Include="Imagens\ajax-loader.gif" />
+    <Content Include="Imagens\ap1.png" />
+    <Content Include="Imagens\ap3cinza.png" />
+    <Content Include="Imagens\assumir.png" />
+    <Content Include="Imagens\axios3.PNG" />
+    <Content Include="Imagens\axios4.PNG" />
+    <Content Include="Imagens\cadeado32x32.png" />
+    <Content Include="Imagens\cadeado_16x16.png" />
+    <Content Include="Imagens\cliente.png" />
+    <Content Include="Imagens\editar16.png" />
+    <Content Include="Imagens\error.png" />
+    <Content Include="Imagens\excel.png" />
+    <Content Include="Imagens\excluir16.png" />
+    <Content Include="Imagens\home.png" />
+    <Content Include="Imagens\home32.png" />
+    <Content Include="Imagens\hora.png" />
+    <Content Include="Imagens\html.png" />
+    <Content Include="Imagens\iconemenu.png" />
+    <Content Include="Imagens\ImgEspacoIconImpressao.png" />
+    <None Include="Imagens\img\acess_not.jpeg" />
+    <None Include="Imagens\img\add_16.png" />
+    <None Include="Imagens\img\add20x20.jpg" />
+    <None Include="Imagens\img\add32x32.png" />
+    <None Include="Imagens\img\add216x16.png" />
+    <None Include="Imagens\img\agend.png" />
+    <None Include="Imagens\img\agendamento.png" />
+    <None Include="Imagens\img\ajax-loader.gif" />
+    <None Include="Imagens\img\ap1.png" />
+    <None Include="Imagens\img\ap3cinza.png" />
+    <None Include="Imagens\img\assumir.png" />
+    <None Include="Imagens\img\axios3.PNG" />
+    <None Include="Imagens\img\axios4.PNG" />
+    <None Include="Imagens\img\cadeado_16x16.png" />
+    <None Include="Imagens\img\cadeado32x32.png" />
+    <None Include="Imagens\img\cliente.png" />
+    <None Include="Imagens\img\editar16.png" />
+    <None Include="Imagens\img\error.png" />
+    <None Include="Imagens\img\excel.png" />
+    <None Include="Imagens\img\excluir16.png" />
+    <None Include="Imagens\img\home.png" />
+    <None Include="Imagens\img\home32.png" />
+    <None Include="Imagens\img\hora.png" />
+    <None Include="Imagens\img\html.png" />
+    <None Include="Imagens\img\iconemenu.png" />
+    <None Include="Imagens\img\ImgEspacoIconImpressao.png" />
+    <None Include="Imagens\img\keys.png" />
+    <None Include="Imagens\img\locked.png" />
+    <None Include="Imagens\img\logocaixaaqui.png" />
+    <None Include="Imagens\img\logos.png" />
+    <None Include="Imagens\img\mail.png" />
+    <None Include="Imagens\img\ods.png" />
+    <None Include="Imagens\img\pagasus5.png" />
+    <None Include="Imagens\img\pagasus6.png" />
+    <None Include="Imagens\img\pagasus7.png" />
+    <None Include="Imagens\img\page_not_found.jpeg" />
+    <None Include="Imagens\img\pdf.png" />
+    <None Include="Imagens\img\pegasus.PNG" />
+    <None Include="Imagens\img\pegasus3.png" />
+    <None Include="Imagens\img\procedimentos.png" />
+    <None Include="Imagens\img\raiz.PNG" />
+    <None Include="Imagens\img\setabaixo.png" />
+    <None Include="Imagens\img\setore.PNG" />
+    <None Include="Imagens\img\Xreprovado.png" />
+    <None Include="Imagens\img\zoom.gif" />
+    <Content Include="Imagens\keys.png" />
+    <Content Include="Imagens\locked.png" />
+    <Content Include="Imagens\logocaixaaqui.png" />
+    <Content Include="Imagens\logos.png" />
+    <Content Include="Imagens\mail.png" />
+    <Content Include="Imagens\ods.png" />
+    <Content Include="Imagens\pagasus5.png" />
+    <Content Include="Imagens\pagasus6.png" />
+    <Content Include="Imagens\pagasus7.png" />
+    <Content Include="Imagens\page_not_found.jpeg" />
+    <Content Include="Imagens\pdf.png" />
+    <Content Include="Imagens\pegasus.PNG" />
+    <Content Include="Imagens\pegasus3.png" />
+    <Content Include="Imagens\procedimentos.png" />
+    <Content Include="Imagens\raiz.PNG" />
+    <Content Include="Imagens\setabaixo.png" />
+    <Content Include="Imagens\setore.PNG" />
+    <Content Include="Imagens\Xreprovado.png" />
+    <Content Include="Imagens\zoom.gif" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -242,5 +363,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

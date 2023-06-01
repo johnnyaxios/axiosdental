@@ -1,10 +1,9 @@
 ﻿using AxiosDental.br.com.projeto.conexao;
 using AxiosDental.br.com.projeto.model;
-
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +13,7 @@ namespace AxiosDental.br.com.projeto.dao
 {
     public class ServicoDAO
     {
-        private SqlConnection conexao;
+        private MySqlConnection conexao;
         public ServicoDAO()
         {
             this.conexao = new ConnectionFactory().getconnection();
@@ -28,7 +27,7 @@ namespace AxiosDental.br.com.projeto.dao
             {
                 string sql = @"insert into tb_servico(codigo_interno,descricao,valor,Data_hora_cad,usuario_cad) " +
                                "values(@codigo_interno,@descricao,@valor,@Data_hora_cad,@usuario_cad)";
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@codigo_interno", obj.codigo_interno);
                 executacmd.Parameters.AddWithValue("@descricao", obj.descricao);
                 executacmd.Parameters.AddWithValue("@valor", obj.valor);
@@ -38,7 +37,7 @@ namespace AxiosDental.br.com.projeto.dao
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
                 /*if (executacmd.LastInsertedId != 0)
-                    executacmd.Parameters.Add(new SqlParameter("ultimoId", executacmd.LastInsertedId));
+                    executacmd.Parameters.Add(new MySqlParameter("ultimoId", executacmd.LastInsertedId));
                 // Retorna o id do novo rgistro e convert de Int64 para Int32 (int).
                 ; + Convert.ToInt32(executacmd.Parameters["@ultimoId"].Value)*/
 
@@ -61,7 +60,7 @@ namespace AxiosDental.br.com.projeto.dao
             {
                 string sql = @"update tb_servico set codigo_interno=@codigo_interno,descricao=@descricao,valor=@valor,Data_hora_alt=@Data_hora_alt,usuario_alt=@usuario_alt
                                     where id=@id";
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", obj.id);
                 executacmd.Parameters.AddWithValue("@codigo_interno", obj.codigo_interno);
                 executacmd.Parameters.AddWithValue("@descricao", obj.descricao);
@@ -93,7 +92,7 @@ namespace AxiosDental.br.com.projeto.dao
 
 
 
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", obj.id);
 
                 conexao.Open();
@@ -117,13 +116,13 @@ namespace AxiosDental.br.com.projeto.dao
             try
             {
                 DataTable tabelacliente = new DataTable();
-                string sql = "select * from tb_Servico order by descricao";
+                string sql = "select * from tb_servico order by descricao";
 
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                SqlDataAdapter da = new SqlDataAdapter(executacmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
                 da.Fill(tabelacliente);
                 conexao.Close();
                 return tabelacliente;
@@ -145,12 +144,12 @@ namespace AxiosDental.br.com.projeto.dao
                 DataTable tabelacliente = new DataTable();
                 string sql = "select * from tb_servico where codigo_interno like '%" + codiInterno + "%'";
 
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@codiInterno", codiInterno);
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                SqlDataAdapter da = new SqlDataAdapter(executacmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
                 da.Fill(tabelacliente);
                 conexao.Close();
                 return tabelacliente;

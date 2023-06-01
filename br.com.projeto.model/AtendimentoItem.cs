@@ -15,5 +15,6 @@ namespace AxiosDental.br.com.projeto.model
         public int procedimento_id { get; set; }
         public string observacao { get; set; }
         public string status { get; set; }
+        public Decimal valor { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using AxiosDental.br.com.projeto.conexao;
 using AxiosDental.br.com.projeto.model;
-
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -14,7 +14,7 @@ namespace AxiosDental.br.com.projeto.dao
 {
     public class AgendamentoDAO
     {
-        private SqlConnection conexao;
+        private MySqlConnection conexao;
         public AgendamentoDAO()
         {
             this.conexao = new ConnectionFactory().getconnection();
@@ -30,7 +30,7 @@ namespace AxiosDental.br.com.projeto.dao
                                                , observacao, status, id_funcionario, data_cad) " +
                                "values(@id_cliente,@data_agendamento,@hora_agendamento," +
                                "@observacao,@status,@id_funcionario,@data_cad)";
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id_cliente", obj.id_cliente);
                 executacmd.Parameters.AddWithValue("@data_agendamento", obj.data_agendamento);
                 executacmd.Parameters.AddWithValue("@hora_agendamento", obj.hora_agendamento);
@@ -59,14 +59,14 @@ namespace AxiosDental.br.com.projeto.dao
             try
             {
                 DataTable tabelaAgendamento = new DataTable();
-                string sql = "SELECT ta.id, ta.id_cliente, tc.nome, ta.hora_agendamento, ta.observacao, ta.status  \r\nFROM tb_agendamento ta \r\njoin TB_CLIENTE tc on tc.id = ta.id_cliente\r\nwhere ta.data_agendamento =@dataAgendamento\r\n and ta.status not in ('Cancelado')order by 4";
+                string sql = "SELECT ta.id, ta.id_cliente, tc.nome, ta.hora_agendamento, ta.observacao, ta.status  \r\nFROM tb_agendamento ta \r\njoin tb_cliente tc on tc.id = ta.id_cliente\r\nwhere ta.data_agendamento =@dataAgendamento\r\n and ta.status not in ('Cancelado')order by 4";
 
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@dataAgendamento", dataAgendamento);
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                SqlDataAdapter da = new SqlDataAdapter(executacmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
                 da.Fill(tabelaAgendamento);
                 conexao.Close();
                 return tabelaAgendamento;
@@ -86,7 +86,7 @@ namespace AxiosDental.br.com.projeto.dao
             {
                 string sql = @"update tb_agendamento set status=@status
                                     where id=@id";
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@status", obj.status);
                 executacmd.Parameters.AddWithValue("@id", obj.id);
 

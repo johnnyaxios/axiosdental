@@ -40,9 +40,12 @@
             this.BtVoltar = new System.Windows.Forms.Button();
             this.BtExcluir = new System.Windows.Forms.Button();
             this.BtSalvar = new System.Windows.Forms.Button();
-            this.BtNovo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BiIniciar = new System.Windows.Forms.Button();
             this.grTratamento = new System.Windows.Forms.GroupBox();
+            this.txtid_atendimento_item = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TxtValor = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.cbPosicao = new System.Windows.Forms.ComboBox();
             this.tabela = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,14 +67,36 @@
             this.cbLocalTratamento = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btFinalizar = new System.Windows.Forms.Button();
+            this.TxtStatusAtendimento = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.grStatusAtendimento = new System.Windows.Forms.GroupBox();
+            this.BtSalvarStatus = new System.Windows.Forms.Button();
+            this.BtCancelar = new System.Windows.Forms.Button();
+            this.CbStatusAtendimento = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tabelaAtendimento = new System.Windows.Forms.DataGridView();
+            this.id_tratamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pronturario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status_atendimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtNovo = new System.Windows.Forms.Button();
+            this.BtSair = new System.Windows.Forms.Button();
+            this.GrpAtendimentos = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.grTratamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).BeginInit();
+            this.grStatusAtendimento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaAtendimento)).BeginInit();
+            this.GrpAtendimentos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,11 +108,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(84, 21);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(218, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(559, 55);
+            this.label1.Size = new System.Drawing.Size(409, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Consulta e Tratamentos";
             // 
@@ -130,19 +155,20 @@
             this.BtVoltar.BackColor = System.Drawing.SystemColors.Highlight;
             this.BtVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtVoltar.ForeColor = System.Drawing.Color.White;
-            this.BtVoltar.Location = new System.Drawing.Point(574, 474);
+            this.BtVoltar.Location = new System.Drawing.Point(503, 474);
             this.BtVoltar.Name = "BtVoltar";
             this.BtVoltar.Size = new System.Drawing.Size(133, 36);
             this.BtVoltar.TabIndex = 157;
             this.BtVoltar.Text = "Voltar";
             this.BtVoltar.UseVisualStyleBackColor = false;
+            this.BtVoltar.Click += new System.EventHandler(this.BtVoltar_Click);
             // 
             // BtExcluir
             // 
             this.BtExcluir.BackColor = System.Drawing.SystemColors.Highlight;
             this.BtExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtExcluir.ForeColor = System.Drawing.Color.White;
-            this.BtExcluir.Location = new System.Drawing.Point(296, 474);
+            this.BtExcluir.Location = new System.Drawing.Point(225, 474);
             this.BtExcluir.Name = "BtExcluir";
             this.BtExcluir.Size = new System.Drawing.Size(133, 36);
             this.BtExcluir.TabIndex = 156;
@@ -154,7 +180,7 @@
             this.BtSalvar.BackColor = System.Drawing.SystemColors.Highlight;
             this.BtSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtSalvar.ForeColor = System.Drawing.Color.White;
-            this.BtSalvar.Location = new System.Drawing.Point(157, 474);
+            this.BtSalvar.Location = new System.Drawing.Point(86, 474);
             this.BtSalvar.Name = "BtSalvar";
             this.BtSalvar.Size = new System.Drawing.Size(133, 36);
             this.BtSalvar.TabIndex = 155;
@@ -162,34 +188,25 @@
             this.BtSalvar.UseVisualStyleBackColor = false;
             this.BtSalvar.Click += new System.EventHandler(this.BtSalvar_Click);
             // 
-            // BtNovo
+            // BiIniciar
             // 
-            this.BtNovo.BackColor = System.Drawing.SystemColors.Highlight;
-            this.BtNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtNovo.ForeColor = System.Drawing.Color.White;
-            this.BtNovo.Location = new System.Drawing.Point(18, 474);
-            this.BtNovo.Name = "BtNovo";
-            this.BtNovo.Size = new System.Drawing.Size(133, 36);
-            this.BtNovo.TabIndex = 154;
-            this.BtNovo.Text = "Novo";
-            this.BtNovo.UseVisualStyleBackColor = false;
-            this.BtNovo.Click += new System.EventHandler(this.BtNovo_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(432, 128);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 27);
-            this.button1.TabIndex = 158;
-            this.button1.Text = "Iniciar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BiIniciar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BiIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BiIniciar.ForeColor = System.Drawing.Color.White;
+            this.BiIniciar.Location = new System.Drawing.Point(432, 128);
+            this.BiIniciar.Name = "BiIniciar";
+            this.BiIniciar.Size = new System.Drawing.Size(92, 27);
+            this.BiIniciar.TabIndex = 158;
+            this.BiIniciar.Text = "Iniciar";
+            this.BiIniciar.UseVisualStyleBackColor = false;
+            this.BiIniciar.Click += new System.EventHandler(this.button1_Click);
             // 
             // grTratamento
             // 
+            this.grTratamento.Controls.Add(this.txtid_atendimento_item);
+            this.grTratamento.Controls.Add(this.label11);
+            this.grTratamento.Controls.Add(this.TxtValor);
+            this.grTratamento.Controls.Add(this.label5);
             this.grTratamento.Controls.Add(this.cbPosicao);
             this.grTratamento.Controls.Add(this.tabela);
             this.grTratamento.Controls.Add(this.cbStatus);
@@ -208,6 +225,43 @@
             this.grTratamento.TabIndex = 159;
             this.grTratamento.TabStop = false;
             this.grTratamento.Text = "Tratamento";
+            // 
+            // txtid_atendimento_item
+            // 
+            this.txtid_atendimento_item.Location = new System.Drawing.Point(326, 100);
+            this.txtid_atendimento_item.Name = "txtid_atendimento_item";
+            this.txtid_atendimento_item.ReadOnly = true;
+            this.txtid_atendimento_item.Size = new System.Drawing.Size(100, 20);
+            this.txtid_atendimento_item.TabIndex = 167;
+            this.txtid_atendimento_item.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(285, 103);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(18, 13);
+            this.label11.TabIndex = 168;
+            this.label11.Text = "ID";
+            this.label11.Visible = false;
+            // 
+            // TxtValor
+            // 
+            this.TxtValor.Location = new System.Drawing.Point(562, 47);
+            this.TxtValor.Name = "TxtValor";
+            this.TxtValor.Size = new System.Drawing.Size(142, 20);
+            this.TxtValor.TabIndex = 166;
+            this.TxtValor.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(491, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 165;
+            this.label5.Text = "Valor";
+            this.label5.Visible = false;
             // 
             // cbPosicao
             // 
@@ -263,6 +317,7 @@
             this.tabela.Size = new System.Drawing.Size(701, 173);
             this.tabela.TabIndex = 163;
             this.tabela.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabela_CellContentClick);
+            this.tabela.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabela_CellContentDoubleClick);
             // 
             // id
             // 
@@ -387,7 +442,7 @@
             this.cbTratamento.FormattingEnabled = true;
             this.cbTratamento.Location = new System.Drawing.Point(96, 44);
             this.cbTratamento.Name = "cbTratamento";
-            this.cbTratamento.Size = new System.Drawing.Size(444, 21);
+            this.cbTratamento.Size = new System.Drawing.Size(377, 21);
             this.cbTratamento.TabIndex = 157;
             // 
             // label6
@@ -421,7 +476,7 @@
             this.btFinalizar.BackColor = System.Drawing.SystemColors.Highlight;
             this.btFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btFinalizar.Location = new System.Drawing.Point(435, 474);
+            this.btFinalizar.Location = new System.Drawing.Point(364, 474);
             this.btFinalizar.Name = "btFinalizar";
             this.btFinalizar.Size = new System.Drawing.Size(133, 36);
             this.btFinalizar.TabIndex = 160;
@@ -429,23 +484,214 @@
             this.btFinalizar.UseVisualStyleBackColor = false;
             this.btFinalizar.Click += new System.EventHandler(this.btFinalizar_Click);
             // 
+            // TxtStatusAtendimento
+            // 
+            this.TxtStatusAtendimento.Location = new System.Drawing.Point(264, 106);
+            this.TxtStatusAtendimento.Name = "TxtStatusAtendimento";
+            this.TxtStatusAtendimento.ReadOnly = true;
+            this.TxtStatusAtendimento.Size = new System.Drawing.Size(142, 20);
+            this.TxtStatusAtendimento.TabIndex = 168;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(155, 109);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(99, 13);
+            this.label10.TabIndex = 167;
+            this.label10.Text = "Status Atendimento";
+            this.label10.Click += new System.EventHandler(this.Status);
+            // 
+            // grStatusAtendimento
+            // 
+            this.grStatusAtendimento.Controls.Add(this.BtSalvarStatus);
+            this.grStatusAtendimento.Controls.Add(this.BtCancelar);
+            this.grStatusAtendimento.Controls.Add(this.CbStatusAtendimento);
+            this.grStatusAtendimento.Controls.Add(this.label12);
+            this.grStatusAtendimento.Location = new System.Drawing.Point(260, 109);
+            this.grStatusAtendimento.Name = "grStatusAtendimento";
+            this.grStatusAtendimento.Size = new System.Drawing.Size(200, 100);
+            this.grStatusAtendimento.TabIndex = 169;
+            this.grStatusAtendimento.TabStop = false;
+            this.grStatusAtendimento.Text = "Status do Atendimento";
+            this.grStatusAtendimento.Visible = false;
+            // 
+            // BtSalvarStatus
+            // 
+            this.BtSalvarStatus.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BtSalvarStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtSalvarStatus.ForeColor = System.Drawing.Color.White;
+            this.BtSalvarStatus.Location = new System.Drawing.Point(6, 66);
+            this.BtSalvarStatus.Name = "BtSalvarStatus";
+            this.BtSalvarStatus.Size = new System.Drawing.Size(92, 27);
+            this.BtSalvarStatus.TabIndex = 166;
+            this.BtSalvarStatus.Text = "Salvar";
+            this.BtSalvarStatus.UseVisualStyleBackColor = false;
+            this.BtSalvarStatus.Click += new System.EventHandler(this.BtSalvarStatus_Click);
+            // 
+            // BtCancelar
+            // 
+            this.BtCancelar.BackColor = System.Drawing.Color.Red;
+            this.BtCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtCancelar.ForeColor = System.Drawing.Color.White;
+            this.BtCancelar.Location = new System.Drawing.Point(102, 66);
+            this.BtCancelar.Name = "BtCancelar";
+            this.BtCancelar.Size = new System.Drawing.Size(92, 27);
+            this.BtCancelar.TabIndex = 165;
+            this.BtCancelar.Text = "Cancelar";
+            this.BtCancelar.UseVisualStyleBackColor = false;
+            this.BtCancelar.Click += new System.EventHandler(this.BtCancelar_Click);
+            // 
+            // CbStatusAtendimento
+            // 
+            this.CbStatusAtendimento.FormattingEnabled = true;
+            this.CbStatusAtendimento.Items.AddRange(new object[] {
+            "",
+            "Aprovado",
+            "Reprovado",
+            "Finalizado"});
+            this.CbStatusAtendimento.Location = new System.Drawing.Point(17, 35);
+            this.CbStatusAtendimento.Name = "CbStatusAtendimento";
+            this.CbStatusAtendimento.Size = new System.Drawing.Size(177, 21);
+            this.CbStatusAtendimento.TabIndex = 164;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(14, 19);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 13);
+            this.label12.TabIndex = 163;
+            this.label12.Text = "Status";
+            // 
+            // tabelaAtendimento
+            // 
+            this.tabelaAtendimento.AllowUserToAddRows = false;
+            this.tabelaAtendimento.AllowUserToDeleteRows = false;
+            this.tabelaAtendimento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaAtendimento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_tratamento,
+            this.pronturario,
+            this.id_paciente,
+            this.nome,
+            this.status_atendimento});
+            this.tabelaAtendimento.Location = new System.Drawing.Point(12, 25);
+            this.tabelaAtendimento.Name = "tabelaAtendimento";
+            this.tabelaAtendimento.ReadOnly = true;
+            this.tabelaAtendimento.RowHeadersVisible = false;
+            this.tabelaAtendimento.Size = new System.Drawing.Size(695, 337);
+            this.tabelaAtendimento.TabIndex = 0;
+            this.tabelaAtendimento.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaAtendimento_CellContentClick);
+            this.tabelaAtendimento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaAtendimento_CellDoubleClick);
+            // 
+            // id_tratamento
+            // 
+            this.id_tratamento.DataPropertyName = "id_atendimento";
+            this.id_tratamento.HeaderText = "id_tratamento";
+            this.id_tratamento.Name = "id_tratamento";
+            this.id_tratamento.ReadOnly = true;
+            this.id_tratamento.Visible = false;
+            // 
+            // pronturario
+            // 
+            this.pronturario.DataPropertyName = "prontuario";
+            this.pronturario.HeaderText = "Pronturario";
+            this.pronturario.Name = "pronturario";
+            this.pronturario.ReadOnly = true;
+            this.pronturario.Width = 150;
+            // 
+            // id_paciente
+            // 
+            this.id_paciente.DataPropertyName = "id_cliente";
+            this.id_paciente.HeaderText = "id_paciente";
+            this.id_paciente.Name = "id_paciente";
+            this.id_paciente.ReadOnly = true;
+            this.id_paciente.Visible = false;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            this.nome.Width = 400;
+            // 
+            // status_atendimento
+            // 
+            this.status_atendimento.DataPropertyName = "status";
+            this.status_atendimento.HeaderText = "Status";
+            this.status_atendimento.Name = "status_atendimento";
+            this.status_atendimento.ReadOnly = true;
+            // 
+            // BtNovo
+            // 
+            this.BtNovo.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BtNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtNovo.ForeColor = System.Drawing.Color.White;
+            this.BtNovo.Location = new System.Drawing.Point(429, 368);
+            this.BtNovo.Name = "BtNovo";
+            this.BtNovo.Size = new System.Drawing.Size(133, 36);
+            this.BtNovo.TabIndex = 155;
+            this.BtNovo.Text = "Novo";
+            this.BtNovo.UseVisualStyleBackColor = false;
+            this.BtNovo.Click += new System.EventHandler(this.BtNovo_Click_1);
+            // 
+            // BtSair
+            // 
+            this.BtSair.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BtSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtSair.ForeColor = System.Drawing.Color.White;
+            this.BtSair.Location = new System.Drawing.Point(568, 368);
+            this.BtSair.Name = "BtSair";
+            this.BtSair.Size = new System.Drawing.Size(133, 36);
+            this.BtSair.TabIndex = 156;
+            this.BtSair.Text = "Sair";
+            this.BtSair.UseVisualStyleBackColor = false;
+            this.BtSair.Click += new System.EventHandler(this.BtSair_Click);
+            // 
+            // GrpAtendimentos
+            // 
+            this.GrpAtendimentos.Controls.Add(this.BtSair);
+            this.GrpAtendimentos.Controls.Add(this.BtNovo);
+            this.GrpAtendimentos.Controls.Add(this.tabelaAtendimento);
+            this.GrpAtendimentos.Location = new System.Drawing.Point(3, 106);
+            this.GrpAtendimentos.Name = "GrpAtendimentos";
+            this.GrpAtendimentos.Size = new System.Drawing.Size(716, 410);
+            this.GrpAtendimentos.TabIndex = 161;
+            this.GrpAtendimentos.TabStop = false;
+            this.GrpAtendimentos.Text = "Lista de Atendimentos";
+            this.GrpAtendimentos.Enter += new System.EventHandler(this.GrpAtendimentos_Enter);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AxiosDental.Properties.Resources.pagasus6;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(210, 94);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 516);
+            this.Controls.Add(this.GrpAtendimentos);
+            this.Controls.Add(this.grStatusAtendimento);
             this.Controls.Add(this.btFinalizar);
             this.Controls.Add(this.grTratamento);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BiIniciar);
             this.Controls.Add(this.BtVoltar);
             this.Controls.Add(this.BtExcluir);
             this.Controls.Add(this.BtSalvar);
-            this.Controls.Add(this.BtNovo);
             this.Controls.Add(this.cbCliente);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.TxtStatusAtendimento);
+            this.Controls.Add(this.label10);
             this.MaximizeBox = false;
             this.Name = "FrmAtendimento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -456,6 +702,11 @@
             this.grTratamento.ResumeLayout(false);
             this.grTratamento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).EndInit();
+            this.grStatusAtendimento.ResumeLayout(false);
+            this.grStatusAtendimento.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaAtendimento)).EndInit();
+            this.GrpAtendimentos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -472,8 +723,7 @@
         private System.Windows.Forms.Button BtVoltar;
         private System.Windows.Forms.Button BtExcluir;
         private System.Windows.Forms.Button BtSalvar;
-        private System.Windows.Forms.Button BtNovo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BiIniciar;
         private System.Windows.Forms.GroupBox grTratamento;
         private System.Windows.Forms.ComboBox cbPosicao;
         private System.Windows.Forms.DataGridView tabela;
@@ -496,5 +746,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn observacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.Button btFinalizar;
+        private System.Windows.Forms.TextBox TxtValor;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TxtStatusAtendimento;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtid_atendimento_item;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox grStatusAtendimento;
+        private System.Windows.Forms.Button BtSalvarStatus;
+        private System.Windows.Forms.Button BtCancelar;
+        private System.Windows.Forms.ComboBox CbStatusAtendimento;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView tabelaAtendimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_tratamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pronturario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_paciente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status_atendimento;
+        private System.Windows.Forms.Button BtNovo;
+        private System.Windows.Forms.Button BtSair;
+        private System.Windows.Forms.GroupBox GrpAtendimentos;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

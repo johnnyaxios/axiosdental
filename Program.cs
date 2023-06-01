@@ -9,6 +9,7 @@ namespace AxiosDental
 {
     internal static class Program
     {
+        public static string idAtendimento;
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
@@ -17,7 +18,7 @@ namespace AxiosDental
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmAtendimento());
+            Application.Run(new FrmPacientes());
         }
     }
 }

@@ -21,14 +21,20 @@ namespace AxiosDental
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
             ClienteDAO CL = new ClienteDAO();
+            tabelaCliente.AutoGenerateColumns = false;
+            tabelaCliente.DataSource = tabelaCliente.Columns;
             tabelaCliente.DataSource = CL.listarClientes();
+            
+
+
         }
 
         private void BtNovo_Click(object sender, EventArgs e)
         {
-            
+            novo();
+            ClienteDAO CL = new ClienteDAO();
+            tabelaCliente.DataSource = CL.listarClientes();
         }
 
         public void geraProntuario()
@@ -147,9 +153,67 @@ namespace AxiosDental
 
         private void tabelaCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            TxtId.Text = tabelaCliente.CurrentRow.Cells[0].Value.ToString();
+            
             
 
+        }
+
+        private void BtPesquisar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void novo()
+        {
+            dtaniversario.Text = "";
+            CbStatus.Text = "";
+            TxtObs.Text = "";
+            TxtNomeTitular.Text = "";
+            CbTitular.Text = "";
+            TxtNumSindicato.Text = "";
+            TxtSindicato.Text = "";
+            TxtNumPlano.Text = "";
+            TxtPlano.Text = "";
+            TxtNomeConvenio.Text = "";
+            CbUf.Text = "";
+            TxtCidade.Text = "";
+            TxtBairro.Text = "";
+            TxtComplemento.Text = "";
+            TxtNumero.Text = "";
+            TxtEndereco.Text = "";
+            TxtCep.Text = "";
+            TxtCelular.Text = "";
+            TxtTelefone.Text = "";
+            TxtCpf.Text = "";
+            TxtRg.Text = "";
+            TxtNome.Text = "";
+            TxtProntuario.Text = "";
+            TxtId.Text = "";
+            TxtEmail.Text = "";
+            dtValidadePlano.Text = "";
+            tabelaCliente.DataSource = null;
+            TxtPesquisa.Text = "";
+            grpPesquisar.Visible = true;
+
+        }
+
+        private void tabelaCliente_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TxtId.Text = tabelaCliente.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void BtCadastrar_Click(object sender, EventArgs e)
+        {
+            grpPesquisar.Visible = false;
         }
     }
 }

@@ -49,17 +49,21 @@
             this.cbCliente = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtCodigo = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaAgendamento)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1047, 100);
@@ -68,11 +72,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(336, 23);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(219, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 55);
+            this.label1.Size = new System.Drawing.Size(243, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Agendamento";
             // 
@@ -95,6 +99,7 @@
             this.tabelaAgendamento.Size = new System.Drawing.Size(1019, 332);
             this.tabelaAgendamento.TabIndex = 5;
             this.tabelaAgendamento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaAgendamento_CellClick);
+            this.tabelaAgendamento.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaAgendamento_CellContentClick);
             // 
             // id
             // 
@@ -358,6 +363,16 @@
             this.TxtCodigo.Size = new System.Drawing.Size(100, 20);
             this.TxtCodigo.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AxiosDental.Properties.Resources.pagasus6;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(210, 94);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmAgendamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +392,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabelaAgendamento)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,5 +421,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn observacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.TextBox TxtCodigo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

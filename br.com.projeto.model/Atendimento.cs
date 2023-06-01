@@ -14,6 +14,7 @@ namespace AxiosDental.br.com.projeto.model
         public int cliente_id { get; set; }
         public string Data_hora_cad { get; set; }
        public string Data_hora_alt { get; set; }
-      
+        public string status { get; set; }
+
     }
 }

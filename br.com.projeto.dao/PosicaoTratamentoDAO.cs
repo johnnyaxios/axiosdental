@@ -1,6 +1,6 @@
 ﻿using AxiosDental.br.com.projeto.conexao;
 using AxiosDental.br.com.projeto.model;
-
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,7 +13,7 @@ namespace AxiosDental.br.com.projeto.dao
 {
     public  class PosicaoTratamentoDAO
     {
-        private SqlConnection conexao;
+        private MySqlConnection conexao;
 
         public PosicaoTratamentoDAO()
         {
@@ -27,7 +27,7 @@ namespace AxiosDental.br.com.projeto.dao
             {
                 string sql = @"insert into tb_posicao_tratamento(descricao) " +
                                 "values (@descricao)";
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@descricao", obj.descricao);
 
                 conexao.Open();
@@ -52,11 +52,11 @@ namespace AxiosDental.br.com.projeto.dao
                 DataTable tabela = new DataTable();
                 string sql = "select * from tb_posicao_tratamento order by 2";
 
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                SqlDataAdapter da = new SqlDataAdapter(executacmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
                 da.Fill(tabela);
                 conexao.Close();
                 return tabela;
@@ -78,7 +78,7 @@ namespace AxiosDental.br.com.projeto.dao
                 string sql = @"update tb_posicao_tratamento set descricao = @descricao,
                                     where id=@id";
 
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", obj.id);
                 executacmd.Parameters.AddWithValue("@descricao", obj.descricao);
 
@@ -103,7 +103,7 @@ namespace AxiosDental.br.com.projeto.dao
             {
                 string sql = @"delete from tb_posicao_tratamento where id=@id";
 
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", obj.id);
 
                 conexao.Open();
@@ -129,12 +129,12 @@ namespace AxiosDental.br.com.projeto.dao
                 DataTable tabela = new DataTable();
                 string sql = "select * from tb_posicao_tratamento where descricao like '%"+ criterio+ "%'order by 2";
 
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@criterio", criterio);
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                SqlDataAdapter da = new SqlDataAdapter(executacmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
                 da.Fill(tabela);
                 conexao.Close();
                 return tabela;

@@ -87,5 +87,10 @@ namespace AxiosDental.br.com.projeto.view
             cbStatus.Text = tabelaAgendamento.CurrentRow.Cells[5].Value.ToString();
             TxtObs.Text = tabelaAgendamento.CurrentRow.Cells[4].Value.ToString();
         }
+
+        private void tabelaAgendamento_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

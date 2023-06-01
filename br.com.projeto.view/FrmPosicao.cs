@@ -91,5 +91,10 @@ namespace AxiosDental.br.com.projeto.view
             tabela.DataSource = tabela.Columns;
             tabela.DataSource = no.listar();
         }
+
+        private void tabela_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

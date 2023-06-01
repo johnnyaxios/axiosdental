@@ -1,10 +1,9 @@
 ﻿using AxiosDental.br.com.projeto.conexao;
 using AxiosDental.br.com.projeto.model;
-
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +13,7 @@ namespace AxiosDental.br.com.projeto.dao
 {
     public class ClienteDAO
     {
-        private SqlConnection conexao;
+        private MySqlConnection conexao;
         public ClienteDAO()
         {
             this.conexao = new ConnectionFactory().getconnection();
@@ -32,7 +31,7 @@ namespace AxiosDental.br.com.projeto.dao
                                     num_cart_sindicato,observacao,status,Data_hora_cad,usuario_cad,
                                     titular,nome_titular) " +
                                "values(@prontuario,@nome,@rg,@cpf,@email,@telefone,\r\n@celular,@cep,@endereco,@numero,@complemento,@bairro,\r\n@estado,@cidade,@nome_convenio,@plano,@num_cart_convenio,\r\n@data_validade_plano,@data_nascimento,@nome_sindicato,\r\n@num_cart_sindicato,@observacao,@status,@Data_hora_cad,\r\n@usuario_cad,@titular,@nome_titular)";
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@prontuario", obj.prontuario);
                 executacmd.Parameters.AddWithValue("@nome", obj.nome);
                 executacmd.Parameters.AddWithValue("@rg", obj.rg);
@@ -90,7 +89,7 @@ namespace AxiosDental.br.com.projeto.dao
                                 num_cart_sindicato=@num_cart_sindicato,observacao=@observacao,status=@status,Data_hora_alt=@Data_hora_alt,
                                  usuario_alt=@usuario_alt,titular=@titular,nome_titular=@nome_titular,
                                     where id=@id";
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", obj.id);
                 executacmd.Parameters.AddWithValue("@prontuario", obj.prontuario);
                 executacmd.Parameters.AddWithValue("@nome", obj.nome);
@@ -146,7 +145,7 @@ namespace AxiosDental.br.com.projeto.dao
 
 
 
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", obj.id);
 
                 conexao.Open();
@@ -172,11 +171,11 @@ namespace AxiosDental.br.com.projeto.dao
                 DataTable tabelacliente = new DataTable();
                 string sql = "select * from tb_cliente order by nome";
 
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                SqlDataAdapter da = new SqlDataAdapter(executacmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
                 da.Fill(tabelacliente);
                 conexao.Close();
                 return tabelacliente;
@@ -198,12 +197,12 @@ namespace AxiosDental.br.com.projeto.dao
                 DataTable tabelacliente = new DataTable();
                 string sql = "select * from tb_cliente where nome like '%" + @nome + "%'";
 
-                SqlCommand executacmd = new SqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@nome", nome);
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                SqlDataAdapter da = new SqlDataAdapter(executacmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
                 da.Fill(tabelacliente);
                 conexao.Close();
                 return tabelacliente;

@@ -97,5 +97,10 @@ namespace AxiosDental.br.com.projeto.view
             TxtCodigo.Clear();
             TxtDescricao.Clear();
         }
+
+        private void tabela_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
